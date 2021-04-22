@@ -1,0 +1,4 @@
+mxnet
+fastapi
+uvicorn
+python-multipart

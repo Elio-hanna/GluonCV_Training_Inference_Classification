@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  training:
+    image: classification_training_api
+    build:
+      context: ./training_api
+      dockerfile: Docker/dockerfile
+
+
+  inference_api:
+    image: classification_inference_api
+    build:
+      context: ./inference_api
+      dockerfile: Docker/dockerfile

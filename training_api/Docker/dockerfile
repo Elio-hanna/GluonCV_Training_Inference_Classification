@@ -1,0 +1,12 @@
+FROM python:3.6
+COPY cifar10/ /root/.mxnet/datasets/cifar10/
+COPY src/ /main
+RUN pip install --upgrade pip
+workdir /main
+COPY . .
+RUN apt-get update
+RUN apt-get install python-pip -y
+RUN pip install  fastapi[all]
+RUN pip install mxnet			
+EXPOSE 8000
+CMD ["uvicorn","main:app", "--host", "0.0.0.0","--reload"]

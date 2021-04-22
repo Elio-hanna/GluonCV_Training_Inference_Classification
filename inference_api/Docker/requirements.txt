@@ -1,0 +1,5 @@
+mxnet
+fastapi[all]
+python-multipart
+opencv-python
+Pillow==8.2.0

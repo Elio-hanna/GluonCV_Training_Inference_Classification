@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  training_api:
+    image: classification_training_api
+    volumes:
+      - ./models:/models
+    ports:
+      - "8000:8000"
+
+  inference_api:
+    image: classification_inference_api
+    volumes:
+      - ./models:/models
+      - ./models_hash:/models_hash
+    ports:
+      - "4343:4343"
